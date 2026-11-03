@@ -1,0 +1,291 @@
+/* Fuente Nunito */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+/* Font Awesome */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Estilos para el header principal */
+.main-header {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 1rem 0;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.main-header .header-content {
+    max-width: 1200px;
+    padding: 0 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.main-header .app-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.main-header .app-logo span {
+    margin-left: 0.5rem;
+}
+
+.main-header .logout-btn {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.30);
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-header .logout-btn i {
+    transition: transform 0.2s ease;
+}
+
+.main-header .logout-btn:hover {
+    background: rgba(255, 255, 255, 0.30);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.main-header .logout-btn:hover i {
+    transform: translateX(2px);
+}
+
+body {
+    background: #102258;
+    margin: 0;
+    padding-top: 4rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* ── Aurora background ── */
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body::before {
+    background:
+        radial-gradient(ellipse 90% 55% at 15% 55%, rgba(64, 115, 158, 0.85) 0%, transparent 65%),
+        radial-gradient(ellipse 55% 65% at 85% 22%, rgba(0, 210, 195, 0.70) 0%, transparent 62%),
+        radial-gradient(ellipse 65% 45% at 50% 92%, rgba(251, 197, 49, 0.28) 0%, transparent 58%);
+    filter: blur(32px);
+    animation: aurora1 22s ease-in-out infinite alternate;
+}
+
+body::after {
+    background:
+        radial-gradient(ellipse 75% 50% at 70% 62%, rgba(110, 55, 210, 0.58) 0%, transparent 62%),
+        radial-gradient(ellipse 60% 60% at 28% 18%, rgba(39, 60, 117, 0.80) 0%, transparent 58%),
+        radial-gradient(ellipse 50% 38% at 88% 82%, rgba(0, 185, 225, 0.60) 0%, transparent 56%);
+    filter: blur(40px);
+    animation: aurora2 30s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes aurora1 {
+    0%   { transform: translate(0%,    0%)    scale(1);    opacity: 0.90; }
+    25%  { transform: translate(13%,  -13%)   scale(1.14); opacity: 1;    }
+    50%  { transform: translate(-11%,  9%)    scale(0.88); opacity: 0.92; }
+    75%  { transform: translate(15%,  11%)    scale(1.12); opacity: 0.97; }
+    100% { transform: translate(-9%,  -7%)    scale(1.06); opacity: 0.85; }
+}
+
+@keyframes aurora2 {
+    0%   { transform: translate(0%,    0%)    scale(1);    opacity: 0.80; }
+    25%  { transform: translate(-15%,  11%)   scale(1.12); opacity: 0.95; }
+    50%  { transform: translate(11%,  -13%)   scale(1.10); opacity: 0.88; }
+    75%  { transform: translate(-13%, -15%)   scale(0.90); opacity: 0.97; }
+    100% { transform: translate(9%,    9%)    scale(1.05); opacity: 0.75; }
+}
+
+.container {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    max-width: 900px;
+    width: calc(100% - 40px);
+    padding: 40px;
+    text-align: center;
+    margin: 2rem auto;
+    position: relative;
+    z-index: 1;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #273c75;
+    margin-bottom: 20px;
+}
+
+/* Estilos para la sección de búsqueda */
+.search-box {
+    margin-bottom: 30px;
+}
+
+.search-box label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #444;
+    text-align: left;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+    border-color: #273c75;
+    box-shadow: 0 0 5px rgba(39, 60, 117, 0.3);
+}
+
+.search-box button {
+    width: 100%;
+    padding: 12px 15px;
+    background: #273c75;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.search-box button:hover {
+    background: #40739e;
+}
+
+/* Estilos para el gráfico */
+.chart-container {
+    margin-top: 30px;
+    background: #f5f6fa;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height: 300px;
+}
+
+.chart {
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos para formularios de login y registro */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #273c75;
+    box-shadow: 0 0 5px rgba(39, 60, 117, 0.3);
+}
+
+button:not(.Toastify__close-button){
+width: 100%;
+    padding: 12px 15px;
+    background: #273c75;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover:not(.Toastify__close-button) {
+    background: #40739e;
+}
+
+button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.register-link, .login-link {
+    margin-top: 20px;
+    color: #444;
+}
+
+.register-link a, .login-link a {
+    color: #273c75;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link a:hover, .login-link a:hover {
+    text-decoration: underline;
+}
+
+.error{
+    color: red;
+    font-size: 0.9rem;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Ajuste específico para el contenedor de login/registro */
+.container.auth-container {
+    max-width: 400px;
+    width: calc(100% - 40px);
+}

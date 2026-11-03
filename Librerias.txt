@@ -1,0 +1,15 @@
+npm create vite@latest  // CREACION DE PROYECTO
+
+npm i react-hook-form // FORMULARIOS
+
+npm i @reduxjs/toolkit react-redux // REDUX
+
+npm i joi @hookform/resolvers // JOI Y RESOLVERS
+
+npm i axios // AXIOS
+
+npm i react-router  // ROUTER
+
+npm i react-chartjs-2 chart.js // GRAFICAS
+
+npm i react-toastify // TOASTS
